@@ -29,7 +29,7 @@
   "homepage": "https://github.com/serieseight/cli#readme",
   "license": "MIT",
   "main": "index.js",
-  "name": "cli",
+  "name": "@serieseight/cli",
   "repository": {
     "type": "git",
     "url": "https://github.com/serieseight/cli"
