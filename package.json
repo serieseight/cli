@@ -36,9 +36,9 @@
   },
   "scripts": {
     "commit": "git-cz",
-    "precommit": "pretty-quick --staged",
     "semantic-release": "semantic-release",
     "setup:semantic-release": "semantic-release-cli setup",
+    "test": "exit 0",
     "travis-deploy-once": "travis-deploy-once"
   },
   "version": "0.0.0-development"
