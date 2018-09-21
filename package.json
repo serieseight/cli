@@ -1,0 +1,45 @@
+{
+  "author": {
+    "name": "Colin Meinke",
+    "email": "colin@serieseight.com",
+    "url": "https://serieseight.com"
+  },
+  "bin": {
+    "s8": "./index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/serieseight/cli/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "chalk": "^2.4.1"
+  },
+  "description": "A pointless CLI",
+  "devDependencies": {
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "semantic-release": "^15.9.16",
+    "semantic-release-cli": "^4.0.7",
+    "travis-deploy-once": "^5.0.8"
+  },
+  "homepage": "https://github.com/serieseight/cli#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/serieseight/cli"
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "precommit": "pretty-quick --staged",
+    "semantic-release": "semantic-release",
+    "setup:semantic-release": "semantic-release-cli setup",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "version": "0.0.0-development"
+}
