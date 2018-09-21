@@ -30,6 +30,9 @@
   "license": "MIT",
   "main": "index.js",
   "name": "@serieseight/cli",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/serieseight/cli"
