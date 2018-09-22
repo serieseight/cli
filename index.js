@@ -2,14 +2,21 @@
 
 const chalk = require('chalk')
 const helloCmd = require('./commands/hello')
-const package = require('./package.json');
+const helpCmd = require('./commands/help')
+const versionCmd = require('./commands/version')
 
 const args = process.argv.splice(2)
 
 switch(args[0]) {
+  case '--help':
+  case '-h':
+  case undefined:
+    helpCmd()
+    break
+
   case '--version':
   case '-v':
-    console.log(package.version)
+    versionCmd()
     break
 
   case 'hello':

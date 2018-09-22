@@ -25,8 +25,7 @@ module.exports = args => {
       }
     ])
     .then(({ user }) => {
-      console.log(
-        `Yay, it's ${chalk.bold.green(user)}! My favourie team member.`
-      )
+      console.log(`
+Yay, it's ${chalk.bold.green(user)}! My favourie team member.`)
     })
 }
