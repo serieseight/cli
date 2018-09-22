@@ -2,6 +2,8 @@
 
 const chalk = require('chalk')
 
+const args = process.argv.splice(2)
+
 console.log(
-  `The ${chalk.bold(process.argv[2])} command is not defined... yet!`
+  `The ${chalk.bold(args.join(' '))} command is not defined... yet!`
 )
