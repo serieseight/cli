@@ -1,7 +1,7 @@
 const { exec } = require('child_process')
 const { name } = require('../package.json')
 
-module.exports = args => {
+module.exports = () => {
   console.log('Upgrading...')
 
   exec(`npm i -g ${name}`, (err, stdout, stderr) => {

@@ -3,12 +3,13 @@
 const chalk = require('chalk')
 const helloCmd = require('./commands/hello')
 const helpCmd = require('./commands/help')
+const teamCmd = require('./commands/team')
 const upgradeCmd = require('./commands/upgrade')
 const versionCmd = require('./commands/version')
 
-const args = process.argv.splice(2)
+const [cmd, ...args] = process.argv.slice(2)
 
-switch(args[0]) {
+switch(cmd) {
   case '--help':
   case '-h':
   case undefined:
@@ -20,16 +21,20 @@ switch(args[0]) {
     versionCmd()
     break
 
+  case 'team':
+    teamCmd(args)
+    break
+
   case 'upgrade':
-    upgradeCmd(args)
+    upgradeCmd()
     break
 
   case 'hello':
-    helloCmd(args)
+    helloCmd()
     break
 
   default:
     console.log(
-      `The ${chalk.bold.red(args.join(' '))} command is not defined... yet!`
+      `The ${chalk.bold.red(cmd)} command is not defined... yet!`
     )
 }

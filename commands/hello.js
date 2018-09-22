@@ -1,31 +1,20 @@
 const chalk = require('chalk')
 const inquirer = require('inquirer')
+const { team } = require('config')
 
-module.exports = args => {
+module.exports = () => {
   inquirer
     .prompt([
       {
         type: 'list',
         name: 'user',
         message: 'Who the heck are you?',
-        choices: [
-          'Aryeh',
-          'Colin',
-          'Ed',
-          'Fran',
-          'Ildar',
-          'John',
-          'Laszlo',
-          'Leo',
-          'Mario',
-          'Mathew',
-          'Monika',
-          'Steve',
-        ]
+        choices: team.map(({ name }) => name)
       }
     ])
     .then(({ user }) => {
-      console.log(`
-Yay, it's ${chalk.bold.green(user)}! My favourite team member.`)
+      console.log(
+        `Yay, it's ${chalk.bold.green(user)}! My favourite team member.`
+      )
     })
 }
