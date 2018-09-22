@@ -16,7 +16,8 @@
     }
   },
   "dependencies": {
-    "chalk": "^2.4.1"
+    "chalk": "^2.4.1",
+    "inquirer": "^6.2.0"
   },
   "description": "A pointless CLI",
   "devDependencies": {
