@@ -3,6 +3,7 @@
 const chalk = require('chalk')
 const helloCmd = require('./commands/hello')
 const helpCmd = require('./commands/help')
+const installCmd = require('./commands/install')
 const teamCmd = require('./commands/team')
 const upgradeCmd = require('./commands/upgrade')
 const versionCmd = require('./commands/version')
@@ -27,6 +28,10 @@ switch(cmd) {
 
   case 'upgrade':
     upgradeCmd()
+    break
+
+  case 'install':
+    installCmd(args)
     break
 
   case 'hello':
