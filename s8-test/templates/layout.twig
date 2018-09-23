@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      {% if craft.app.config.general.devMode %}
+        href="/assets/css/main.css"
+      {% else %}
+        href="{{ rev("/assets/css/main.css") }}"
+      {% endif %}
+    />
+  </head>
+  <body>
+    {% include "components/header" %}
+    {% block main %}{% endblock %}
+    {% include "components/footer" %}
+
+    <script
+      {% if craft.app.config.general.devMode %}
+        src="/assets/js/main.js"
+      {% else %}
+        src="{{ rev("/assets/js/main.js") }}"
+      {% endif %}
+    >
+    </script>
+  </body>
+</html>

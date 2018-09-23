@@ -1,6 +1,6 @@
 const chalk = require('chalk')
 const inquirer = require('inquirer')
-const { team } = require('config')
+const { team } = require('../config')
 
 module.exports = () => {
   inquirer

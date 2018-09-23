@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "config": "git+https://github.com/serieseight/config.git#master",
     "inquirer": "^6.2.0"
   },
   "description": "A pointless CLI",
