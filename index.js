@@ -4,6 +4,7 @@ const chalk = require('chalk')
 const helloCmd = require('./commands/hello')
 const helpCmd = require('./commands/help')
 const installCmd = require('./commands/install')
+const notifyCmd = require('./commands/notify')
 const setupCmd = require('./commands/setup')
 const teamCmd = require('./commands/team')
 const upgradeCmd = require('./commands/upgrade')
@@ -18,8 +19,10 @@ try {
   config = require('@serieseight/config')
   hasSetup = true
 } catch (err) {
-  console.log(`${chalk.yellow(`You still need to run ${chalk.bold('s8 setup')} to complete installation.
+  if (cmd !== setup) {
+    console.log(`${chalk.yellow(`You still need to run ${chalk.bold('s8 setup')} to complete installation.
 Currently ${chalk.bold('s8')} does not have all the data it requires to function.`)}\n`)
+  }
 }
 
 switch(cmd) {
@@ -40,6 +43,10 @@ switch(cmd) {
 
   case 'install':
     installCmd(args)
+    break
+
+  case 'notify':
+    notifyCmd(config.team, config.email)
     break
 
   case 'setup':

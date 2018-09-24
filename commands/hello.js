@@ -7,14 +7,14 @@ module.exports = team => {
       .prompt([
         {
           type: 'list',
-          name: 'user',
+          name: 'name',
           message: 'Who the heck are you?',
           choices: team.map(({ name }) => name)
         }
       ])
-      .then(({ user }) => {
+      .then(({ name }) => {
         console.log(
-          `Yay, it's ${chalk.bold.green(user)}! My favourite team member.`
+          `Yay, it's ${chalk.bold.green(name)}! My favourite team member.`
         )
       })
   } else {
