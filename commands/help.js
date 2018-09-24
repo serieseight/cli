@@ -6,6 +6,7 @@ module.exports = () => {
 Where ${chalk.bold('<command>')} is one of:
     hello
     install
+    notify
     setup
     team
     upgrade`)
