@@ -10,7 +10,7 @@ and then:
 
 ```
 s8 setup
-``
+```
 
 ## Usage
 
