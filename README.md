@@ -6,15 +6,22 @@
 npm install -g @serieseight/cli
 ```
 
+and then:
+
+```
+s8 setup
+``
+
 ## Usage
 
 ```
-s8 hello
+s8 <command>
 ```
+
+To view all available commands run `s8 --help`.
 
 ## Development
 
-Clone the repository at https://github.com/serieseight/cli.
+Clone the repository from https://github.com/serieseight/cli.
 
-Install dependencies with `npm install` (avoid yarn this time, as
-internals use npm).
+Install dependencies with `npm install` (avoid yarn as internals use npm).
