@@ -1,9 +1,12 @@
-module.exports = () => {
-  console.log(`Usage: s8 <command>
+const chalk = require('chalk')
 
-Where <command> is one of:
+module.exports = () => {
+  console.log(`${chalk.green('Usage:')} ${chalk.bold('s8 <command>')}
+
+Where ${chalk.bold('<command>')} is one of:
     hello
     install
+    setup
     team
     upgrade`)
 }

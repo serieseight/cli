@@ -4,11 +4,23 @@ const chalk = require('chalk')
 const helloCmd = require('./commands/hello')
 const helpCmd = require('./commands/help')
 const installCmd = require('./commands/install')
+const setupCmd = require('./commands/setup')
 const teamCmd = require('./commands/team')
 const upgradeCmd = require('./commands/upgrade')
 const versionCmd = require('./commands/version')
 
 const [cmd, ...args] = process.argv.slice(2)
+
+let config = { email: [], team: [] }
+let hasSetup = false
+
+try {
+  config = require('@serieseight/config')
+  hasSetup = true
+} catch (err) {
+  console.log(`${chalk.yellow(`You still need to run ${chalk.bold('s8 setup')} to complete installation.
+Currently ${chalk.bold('s8')} does not have all the data it requires to function.`)}\n`)
+}
 
 switch(cmd) {
   case '--help':
@@ -22,20 +34,24 @@ switch(cmd) {
     versionCmd()
     break
 
-  case 'team':
-    teamCmd(args)
-    break
-
-  case 'upgrade':
-    upgradeCmd()
+  case 'hello':
+    helloCmd(config.team)
     break
 
   case 'install':
     installCmd(args)
     break
 
-  case 'hello':
-    helloCmd()
+  case 'setup':
+    setupCmd(hasSetup)
+    break
+
+  case 'team':
+    teamCmd(config.team, args)
+    break
+
+  case 'upgrade':
+    upgradeCmd()
     break
 
   default:

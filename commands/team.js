@@ -1,11 +1,12 @@
 const chalk = require('chalk')
-const { team } = require('../config')
 
-module.exports = ([cmd]) => {
+module.exports = (team, [cmd]) => {
   switch (cmd) {
     case 'list':
     case undefined:
-      team.map(({ name, email }) => console.log(`${name} - ${email}`))
+      team.length
+        ? team.map(({ name, email }) => console.log(`${chalk.bold.green(name)} - ${email}`))
+        : console.log(`${chalk.bold.red('No team members.')}`)
       break
 
     default:
