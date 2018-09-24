@@ -19,7 +19,7 @@ try {
   config = require('@serieseight/config')
   hasSetup = true
 } catch (err) {
-  if (cmd !== setup) {
+  if (cmd !== 'setup') {
     console.log(`${chalk.yellow(`You still need to run ${chalk.bold('s8 setup')} to complete installation.
 Currently ${chalk.bold('s8')} does not have all the data it requires to function.`)}\n`)
   }
