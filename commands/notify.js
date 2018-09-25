@@ -4,6 +4,10 @@ const nodemailer = require('nodemailer')
 
 const notifications = [
   {
+    subject: 'Hello world!',
+    message: `Nice to meet you!`,
+  },
+  {
     subject: 'Reminder: production changes',
     message: `It is important to remember that changes that have even the slightest chance of causing errors, should not be run directly on a production server (at least without testing somewhere else first).
 
@@ -11,7 +15,7 @@ This includes changes such as:
   - updating plugins
   - changing config
   - etc.`,
-  }
+  },
 ]
 
 module.exports = (team, email) => {
@@ -28,7 +32,7 @@ module.exports = (team, email) => {
           type: 'list',
           name: 'service',
           message: 'How would you like to notify them?',
-          choices: [ 'Email' ],
+          choices: email.map(({ name }) => `Email (${name})`),
         },
         {
           type: 'list',
@@ -40,7 +44,9 @@ module.exports = (team, email) => {
       .then(({ name, service, subject }) => {
         console.log(chalk.dim(`Sending notification to ${name}...`))
 
-        const mailgun = email[0]
+        const emailName = service.split('(').pop().slice(0, -1)
+
+        const mailgun = email.filter(e => e.name === emailName)[0]
         const notification = notifications.filter(n => n.subject === subject)[0]
         const to = team.filter(m => m.name === name)[0].email
 
