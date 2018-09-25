@@ -11,7 +11,7 @@ module.exports = () => {
   execAsync(`npm i -g ${name}`)
     .then(() => console.log(`${chalk.bold('s8')} upgraded!`))
     .then(() => console.log(chalk.dim('Upgrading private dependencies...')))
-    .then(() => execAsync('npm i --no-save git+ssh://git@github.com:serieseight/config.git#master'))
+    .then(() => execAsync('npm i -g git+ssh://git@github.com:serieseight/config.git#master'))
     .then(() => console.log('Private dependencies upgraded!'))
     .then(() => console.log(chalk.bold.green('Upgrade complete!')))
     .catch(err => console.error(err))

@@ -14,7 +14,7 @@ After that please use ${chalk.bold('s8 upgrade')} to upgrade ${chalk.bold('s8')}
   } else {
     console.log(chalk.dim('Installing private dependencies...'))
 
-    execAsync('npm i --no-save git+ssh://git@github.com:serieseight/config.git#master')
+    execAsync('npm i -g git+ssh://git@github.com:serieseight/config.git#master')
       .then(() => console.log('Private dependencies installed!'))
       .then(() => console.log(chalk.bold.green('Setup complete!')))
       .catch(err => console.error(err))
