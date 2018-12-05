@@ -17,16 +17,16 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "inquirer": "^6.2.0",
-    "nodemailer": "^4.6.8"
+    "inquirer": "^6.2.1",
+    "nodemailer": "^4.7.0"
   },
   "description": "A pointless CLI",
   "devDependencies": {
-    "commitizen": "^2.10.1",
+    "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
-    "semantic-release": "^15.9.16",
-    "semantic-release-cli": "^4.0.7",
-    "travis-deploy-once": "^5.0.8"
+    "semantic-release": "^15.12.4",
+    "semantic-release-cli": "^4.0.12",
+    "travis-deploy-once": "^5.0.9"
   },
   "homepage": "https://github.com/serieseight/cli#readme",
   "license": "MIT",
